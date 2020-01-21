@@ -1,0 +1,56 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="utf-8">
+    <title>산소의 커뮤니티</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./bootstrap.min.css" media="screen">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <b><a class="navbar-brand" href="#">산소의 커뮤니티</a></b>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">홈 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./forum">자유게시판</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" href="./imagebbs.html">이미지게시판</a>
+      </li>-->
+      <li class="nav-item">
+        <a class="nav-link" href="./login">로그인</a>
+      </li>
+    </ul>
+    <?php
+      $_SESSION['username']=$username;
+        if(isset($_SESSION['username']))
+        { 
+          echo "<h1>"$username"</h1>";
+        }
+        else{
+          echo "<script>alert('session error');</script>";
+          }
+    ?>
+  </div>
+</nav>
+<pre style="text-align:center;">
+   _   _        _  _        
+  | | | |      | || |       
+  | |_| |  ___ | || |  ___  
+  |  _  | / _ \| || | / _ \ 
+  | | | ||  __/| || || (_) |
+  \_| |_/ \___||_||_| \___/ 
+                          
+                          
+</pre>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="utf-8">
+    <title>산소의 커뮤니티</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./bootstrap.min.css" media="screen">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <b><a class="navbar-brand" href="#">산소의 커뮤니티</a></b>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">홈 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./forum">자유게시판</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" href="./imagebbs.html">이미지게시판</a>
+      </li>-->
+      <li class="nav-item">
+        <a class="nav-link" href="./login">로그인</a>
+      </li>
+    </ul>
+    <?php
+      $_SESSION['username']=$username;
+        if(isset($_SESSION['username']))
+        { 
+          echo "<h1>"$username"</h1>";
+        }
+        else{
+          echo "<script>alert('session error');</script>";
+          }
+    ?>
+  </div>
+</nav>
+
+<!--write-->
+
+
+	<form class="form-margin">
+
+		<div class="form-group">
+    	  <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="제목">
+    	</div>
+
+    	<div class="form-group">
+      		<label for="content">내용</label>
+    		<textarea class="form-control" id="content" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 300px;"></textarea>
+    	</div>
+    	<button type="submit" class="btn-left btn btn-primary">작성</button>
+    </form>
+
+
+
+
+</body>
+</html>
